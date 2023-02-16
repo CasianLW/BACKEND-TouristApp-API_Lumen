@@ -17,11 +17,32 @@ class LocationSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('locations')->insert([
+        $locations = [[
+
             'name' => Str::random(10),
             'slug' => Str::random(10),
             'lat' => rand(1,100),
             'lng' => rand(1,100),
-        ]);
+        ],
+        [
+
+            'name' => Str::random(10),
+            'slug' => Str::random(10),
+            'lat' => rand(1,100),
+            'lng' => rand(1,100),
+        ]
+        ,
+        [
+
+            'name' => Str::random(10),
+            'slug' => Str::random(10),
+            'lat' => rand(1,100),
+            'lng' => rand(1,100),
+        ]
+        ];
+
+        foreach ($locations as $location) {
+            DB::table('locations')->insert($location);
+        }
     }
 }
