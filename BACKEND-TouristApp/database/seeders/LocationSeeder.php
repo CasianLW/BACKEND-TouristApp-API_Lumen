@@ -20,14 +20,12 @@ class LocationSeeder extends Seeder
         $locations = [[
 
             'name' => Str::random(10),
-            'slug' => Str::random(10),
             'lat' => rand(1,100),
             'lng' => rand(1,100),
         ],
         [
 
             'name' => Str::random(10),
-            'slug' => Str::random(10),
             'lat' => rand(1,100),
             'lng' => rand(1,100),
         ]
@@ -35,7 +33,6 @@ class LocationSeeder extends Seeder
         [
 
             'name' => Str::random(10),
-            'slug' => Str::random(10),
             'lat' => rand(1,100),
             'lng' => rand(1,100),
         ]
