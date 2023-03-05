@@ -14,9 +14,18 @@ class PlaceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+        try {
+        
+            $place = Place::findOrFail($id);
+           return response()->json($place, 200);
+    
+        }catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+            return response()->json(['error' => "Error: Place not found"], 404);
+        } catch (\Throwable $th) {
+            return response()->json(['error' => "Not Found ! ".$th], 404);
+        }
     }
 
     public function store(Request $request,$id)

@@ -24,6 +24,7 @@ $router->delete('/api/locations/{id}','LocationController@destroy');
 $router->get('/api/locations/{id}/places','PlaceController@show');
 $router->post('/api/locations/{id}/places','PlaceController@store');
 
+$router->get('/api/places/{id}','PlaceController@index');
 $router->put('/api/places/{id}','PlaceController@update');
 $router->delete('/api/places/{id}','PlaceController@destroy');
 
